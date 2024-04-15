@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SystemZarzadzaniaKolekcjonerstwem.Pages.AddCollectionElementPage"
+             Background="{DynamicResource backgroundColor}">
+    <ScrollView Orientation="Vertical" Padding="10">
+        <VerticalStackLayout Spacing="15">
+            <Label Text="Dodaj element kolekcji" FontSize="Large" TextColor="{DynamicResource textColor}" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <Frame BackgroundColor="{DynamicResource primaryColor}" CornerRadius="30" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Nazwa" TextColor="{DynamicResource textColor}" FontSize="Small"/>
+                    <Entry x:Name="NameEntry" TextColor="{DynamicResource textColor}" BackgroundColor="{DynamicResource backgroundColor}" Margin="5"/>
+
+                    <Label Text="Opis" TextColor="{DynamicResource textColor}" FontSize="Small"/>
+                    <Entry x:Name="DescriptionEntry" TextColor="{DynamicResource textColor}" BackgroundColor="{DynamicResource backgroundColor}" Margin="5"/>
+
+                    <Label Text="Wartość" TextColor="{DynamicResource textColor}" FontSize="Small"/>
+                    <Entry x:Name="ValueEntry" TextColor="{DynamicResource textColor}" BackgroundColor="{DynamicResource backgroundColor}" Margin="5"/>
+
+                    <Label Text="Data" TextColor="{DynamicResource textColor}" FontSize="Small"/>
+                    <DatePicker HorizontalOptions="FillAndExpand" TextColor="{DynamicResource textColor}" BackgroundColor="{DynamicResource backgroundColor}" x:Name="DatePicker" Margin="5"/>
+
+                    <HorizontalStackLayout>
+                        <Label Text="Czy sprzedany: " FontSize="Small" TextColor="{DynamicResource textColor}" VerticalOptions="Center" />
+                        <CheckBox x:Name="SoldCheckBox" Color="{DynamicResource secondaryColor}" VerticalOptions="Center" Scale="1.2"/>
+                    </HorizontalStackLayout>
+
+                    <Label Text="Zdjęcie" TextColor="{DynamicResource textColor}" FontSize="Small"/>
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                        <Image x:Name="ElementImage" WidthRequest="90" HeightRequest="90" Aspect="AspectFill"/>
+                        <Label x:Name="ElementImageText" Text="Brak wybranego zdjęcia" TextColor="{DynamicResource textColor}"/>
+                    </HorizontalStackLayout>
+
+                    <Button Text="Wybierz zdjęcie" BackgroundColor="{DynamicResource secondaryColor}" TextColor="{DynamicResource textColor}" Clicked="SelectImage_Clicked"/>
+                    <Button Text="Dodaj" BackgroundColor="{DynamicResource secondaryColor}" TextColor="{DynamicResource textColor}" Clicked="AddElement_Clicked" Margin="10"/>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
